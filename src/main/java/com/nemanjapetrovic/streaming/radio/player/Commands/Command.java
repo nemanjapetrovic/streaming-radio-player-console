@@ -52,21 +52,26 @@ public class Command implements ICommand {
     public void Play(String name) {
         try {
             //Get the station
-            Station station = DataController.getInstance().getStation(name);
+            final Station station = DataController.getInstance().getStation(name);
             if (station == null) {
                 System.out.println("This station does not exist!");
                 return;
             }
 
-            //Get library
-            NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), NATIVE_LIBRARY_SEARCH_PATH);
+            Thread thread = new Thread(new Runnable() {
+                public void run() {
+                    //Get library
+                    NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), NATIVE_LIBRARY_SEARCH_PATH);
 
-            //Create media and audio
-            AudioMediaListPlayerComponent factoryMy = new AudioMediaListPlayerComponent();
-            MediaPlayer mediaPlayer = factoryMy.getMediaPlayer();
+                    //Create media and audio
+                    AudioMediaListPlayerComponent factoryMy = new AudioMediaListPlayerComponent();
+                    MediaPlayer mediaPlayer = factoryMy.getMediaPlayer();
 
-            //Play
-            mediaPlayer.playMedia(station.getUrl());
+                    //Play
+                    mediaPlayer.playMedia(station.getUrl());
+                }
+            });
+            thread.start();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
