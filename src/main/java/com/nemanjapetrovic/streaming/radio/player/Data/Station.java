@@ -1,4 +1,4 @@
-package com.nemanjapetrovic.streaming.radio.player.data;
+package com.nemanjapetrovic.streaming.radio.player.Data;
 
 /**
  * Created by nemanja on 10/1/16.

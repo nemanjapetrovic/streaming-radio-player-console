@@ -1,9 +1,8 @@
 package com.nemanjapetrovic.streaming.radio.player.Commands;
 
-import com.nemanjapetrovic.streaming.radio.player.data.Station;
-import com.nemanjapetrovic.streaming.radio.player.data.DataController;
+import com.nemanjapetrovic.streaming.radio.player.Data.Station;
+import com.nemanjapetrovic.streaming.radio.player.Data.DataController;
 import com.sun.jna.NativeLibrary;
-import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.component.AudioMediaListPlayerComponent;
 import uk.co.caprica.vlcj.player.MediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;

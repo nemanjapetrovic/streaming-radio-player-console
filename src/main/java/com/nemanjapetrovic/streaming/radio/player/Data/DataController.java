@@ -1,4 +1,4 @@
-package com.nemanjapetrovic.streaming.radio.player.data;
+package com.nemanjapetrovic.streaming.radio.player.Data;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class DataController {
 
     public void LoadStations() {
         try {
-            //Read data
+            //Read Data
             File file = new File(_FILE_NAME);
             if (file.exists()) {
                 FileInputStream inputStream = new FileInputStream(file);
@@ -35,7 +35,7 @@ public class DataController {
                 inputStream.read(buffer);
                 String data = new String(buffer, "UTF-8");
 
-                //Fill stations with data
+                //Fill stations with Data
                 stations.clear();
                 JSONArray json = new JSONArray(data);
                 for (int i = 0; i < json.length(); i++) {
@@ -54,7 +54,7 @@ public class DataController {
 
     public void SaveStations() {
         try {
-            //Write data
+            //Write Data
             FileWriter fileWriter = new FileWriter(_FILE_NAME);
             JSONArray json = new JSONArray(stations);
             fileWriter.write(json.toString());

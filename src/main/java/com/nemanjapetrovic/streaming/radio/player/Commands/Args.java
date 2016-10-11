@@ -4,7 +4,7 @@ package com.nemanjapetrovic.streaming.radio.player.Commands;
  * Created by nemanja on 10/3/16.
  */
 public class Args {
-    //Simple data
+    //Simple Data
     public String command;
     public String name;
     public String url;
