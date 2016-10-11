@@ -52,6 +52,13 @@ public class Command implements ICommand {
 
     public void Play(String name) {
         try {
+            //Get the station
+            Station station = DataController.getInstance().getStation(name);
+            if (station == null) {
+                System.out.println("This station does not exist!");
+                return;
+            }
+
             //Get library
             NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), NATIVE_LIBRARY_SEARCH_PATH);
 
@@ -59,12 +66,7 @@ public class Command implements ICommand {
             AudioMediaListPlayerComponent factoryMy = new AudioMediaListPlayerComponent();
             MediaPlayer mediaPlayer = factoryMy.getMediaPlayer();
 
-            //Get the station and play the stream from the url
-            Station station = DataController.getInstance().getStation(name);
-            if (station == null) {
-                System.out.println("This station does not exist!");
-                return;
-            }
+            //Play
             mediaPlayer.playMedia(station.getUrl());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

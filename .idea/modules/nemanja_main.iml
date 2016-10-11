@@ -9,10 +9,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: org.json:json:20160212" level="project" />
-    <orderEntry type="library" name="Gradle: uk.co.caprica:vlcj:3.7.0" level="project" />
-    <orderEntry type="library" name="Gradle: net.java.dev.jna:jna:3.5.2" level="project" />
-    <orderEntry type="library" name="Gradle: net.java.dev.jna:platform:3.5.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.json:json:20160212" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: uk.co.caprica:vlcj:3.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.java.dev.jna:jna:3.5.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.java.dev.jna:platform:3.5.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.10" level="project" />
   </component>
 </module>
