@@ -23,7 +23,7 @@ public class Main {
 
         try {
             if (arguments == null) { //No command valid was selected
-                throw new Exception("Wrong program arguments!");
+                throw new Exception("Wrong program arguments, try help command!");
             }
 
             //Get command enum
@@ -46,7 +46,7 @@ public class Main {
                     break;
                 //For adding a new command just add a new case
                 default:
-                    System.out.println("The command does not exist!");
+                    System.out.println("The command does not exist, please try help!");
             }
         } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage() + "\n" + "The command does not exist!");
