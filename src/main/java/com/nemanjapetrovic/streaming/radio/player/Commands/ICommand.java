@@ -20,9 +20,4 @@ public interface ICommand {
     //Play a radio station
     void Play(String name);
 
-    //Prints all favorites stations
-    //void Favorites();
-
-    //Add a station to favorite list
-    //void Favorites(String name, String url);
 }

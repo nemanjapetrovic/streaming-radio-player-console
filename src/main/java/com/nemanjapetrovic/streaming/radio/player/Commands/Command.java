@@ -3,9 +3,20 @@ package com.nemanjapetrovic.streaming.radio.player.Commands;
 import com.nemanjapetrovic.streaming.radio.player.Data.Station;
 import com.nemanjapetrovic.streaming.radio.player.Data.DataController;
 import com.sun.jna.NativeLibrary;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 import uk.co.caprica.vlcj.component.AudioMediaListPlayerComponent;
 import uk.co.caprica.vlcj.player.MediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.DataInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Created by nemanja on 10/1/16.
@@ -20,14 +31,12 @@ public class Command implements ICommand {
 
     public void Help() {
         StringBuffer buffer = new StringBuffer();
-        buffer.append("\n\nStreaming radio player commands: \n");
+        buffer.append("\n\n\nStreaming radio player commands: \n");
         buffer.append("\tadd [name] [url] ; add a station to a list of stations \n");
         buffer.append("\tremove [name] ; remove a station from a list of stations \n");
         buffer.append("\tlist [name] [url] ; show all saved radio stations \n");
         buffer.append("\tplay [name] ; play a radio station \n");
-        buffer.append("\tfav [name] [url] ; add a radio station to favorites \n");
-        buffer.append("\tfav ; show all favorites radio stations \n");
-        buffer.append("\n*** Created by Nemanja Petrovic github: @nemanjapetrovic ***\n");
+        buffer.append("\n*** Created by Nemanja Petrovic github: @nemanjapetrovic ***\n\n\n");
 
         System.out.println(buffer.toString());
     }
@@ -58,20 +67,15 @@ public class Command implements ICommand {
                 return;
             }
 
-            Thread thread = new Thread(new Runnable() {
-                public void run() {
-                    //Get library
-                    NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), NATIVE_LIBRARY_SEARCH_PATH);
+            //Get library
+            NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), NATIVE_LIBRARY_SEARCH_PATH);
 
-                    //Create media and audio
-                    AudioMediaListPlayerComponent factoryMy = new AudioMediaListPlayerComponent();
-                    MediaPlayer mediaPlayer = factoryMy.getMediaPlayer();
+            //Create media and audio
+            AudioMediaListPlayerComponent factoryMy = new AudioMediaListPlayerComponent();
+            MediaPlayer mediaPlayer = factoryMy.getMediaPlayer();
 
-                    //Play
-                    mediaPlayer.playMedia(station.getUrl());
-                }
-            });
-            thread.start();
+            //Play
+            mediaPlayer.playMedia(station.getUrl());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
