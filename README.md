@@ -12,7 +12,7 @@ This is a terminal software used to play streaming radio stations via url. Just 
     - list (used to list/print all saved stations)
     - play (used to play radio station)
     
-## Terminal commands examples      
+## Terminal commands explanation      
     - add [name] [url] ; Add a station to 'database' with some name and url
     - remove [name] ; Remove a station from 'database' with some name
 	- list ; Prints all radio stations data from 'database'
