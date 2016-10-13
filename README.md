@@ -20,10 +20,10 @@ This is a terminal software used to play streaming radio stations via url. Just 
 
 ## How to add more commands
 To add new commands you wll need to change four files:
-1. ```ICommand.java``` - add new function
-2. ```Command.java``` - implement that function
-3. ```Args.java``` - in enum ```CommandEnums``` add a name of the command
-4. ```Main.java``` - in switch case statment ```main function``` add new case (your command name)
+- ```ICommand.java``` - add new function
+- ```Command.java``` - implement that function
+- ```Args.java``` - in enum ```CommandEnums``` add a name of the command
+- ```Main.java``` - in switch case statment ```main function``` add new case (your command name)
 
 ## Other
 	- Linux XUbuntu
