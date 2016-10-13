@@ -34,7 +34,7 @@ public class Command implements ICommand {
         buffer.append("\n\n\nStreaming radio player commands: \n");
         buffer.append("\tadd [name] [url] ; add a station to a list of stations \n");
         buffer.append("\tremove [name] ; remove a station from a list of stations \n");
-        buffer.append("\tlist [name] [url] ; show all saved radio stations \n");
+        buffer.append("\tlist ; show all saved radio stations \n");
         buffer.append("\tplay [name] ; play a radio station \n");
         buffer.append("\n*** Created by Nemanja Petrovic github: @nemanjapetrovic ***\n\n\n");
 

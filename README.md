@@ -12,9 +12,18 @@ This is a terminal software used to play streaming radio stations via url. Just 
     - list (used to list/print all saved stations)
     - play (used to play radio station)
     
-## Terminal commands examples
-    
+## Terminal commands examples      
+    - add [name] [url] ; Add a station to 'database' with some name and url
+    - remove [name] ; Remove a station from 'database' with some name
+	- list ; Prints all radio stations data from 'database'
+	- play [name] ; Play a radio station with some name
+
 ## How to add more commands
+To add new commands you wll need to change four files:
+1. ```ICommand.java``` - add new function
+2. ```Command.java``` - implement that function
+3. ```Args.java``` - in enum ```CommandEnums``` add a name of the command
+4. ```Main.java``` - in switch case statment ```main function``` add new case (your command name)
 
 ## Other
 	- Linux XUbuntu
