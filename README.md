@@ -13,10 +13,10 @@ This is a terminal software used to play streaming radio stations via url. Just 
 - ```play``` (used to play radio station)
     
 ## Terminal commands explanation      
-- ```add [name] [url]``` ; Add a station to 'database' with some name and url
-- ```remove [name]``` ; Remove a station from 'database' with some name
-- ```list``` ; Prints all radio stations data from 'database'
-- ```play [name]``` ; Play a radio station with some name
+- ```add [name] [url]```  Add a station to 'database' with some name and url
+- ```remove [name]```  Remove a station from 'database' with some name
+- ```list```  Prints all radio stations data from 'database'
+- ```play [name]```  Play a radio station with some name
 
 ## How to add more commands
 To add new commands you wll need to change four files:
@@ -24,10 +24,6 @@ To add new commands you wll need to change four files:
 - ```Command.java``` - implement that function
 - ```Args.java``` - in enum ```CommandEnums``` add a name of the command
 - ```Main.java``` - in switch case statment ```main function``` add new case (your command name)
-
-## Other
-- ```Linux XUbuntu```
-- ```Java```
-- ```IntelliJ IDEA```
+`
 
 [![N|Solid](http://www.blogworld.com/wp-content/uploads/2009/04/linkedin-logo.jpg)](https://rs.linkedin.com/in/nemanjapetrovic1994)
