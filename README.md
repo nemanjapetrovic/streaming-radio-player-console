@@ -25,5 +25,3 @@ To add new commands you wll need to change four files:
 - ```Args.java``` - in enum ```CommandEnums``` add a name of the command
 - ```Main.java``` - in switch case statment ```main function``` add new case (your command name)
 `
-
-[![N|Solid](http://www.blogworld.com/wp-content/uploads/2009/04/linkedin-logo.jpg)](https://rs.linkedin.com/in/nemanjapetrovic1994)
